@@ -53,8 +53,8 @@ public class UserInputManager {
             return;
         
         if(userService.passwordVerification(userFound, userPassword)) {
-            //todo guardar os dados na sessão e entrar no sistema 
-            
+            Session.setUserInSession(userFound);
+            menu.clearingConsole();
         }
         else {
             menu.somethingWentWrong();
@@ -66,7 +66,6 @@ public class UserInputManager {
     //* Funções de registro
     private void registerEmailInput() {
         String newUserEmail = emailInput();
-        User newUser = new User(userChoice, null, null, null);
         if(returningToLoginPage(newUserEmail))
             return;
 
@@ -85,7 +84,7 @@ public class UserInputManager {
             scanner.close();
             return;
         }
-
+        User newUser = new User(0, "", "null", newUserEmail);
         registerNameInput(newUser);
     }
     private void registerNameInput(User newUser) {

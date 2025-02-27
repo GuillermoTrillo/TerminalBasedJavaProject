@@ -32,7 +32,7 @@ public class UserService {
 
     public void completeUserRegistration(User newUser) {
 
-        newUser.setIdUser(PseudoDataBase.getLastId());
+        newUser.setIdUser(PseudoDataBase.getLastId()+1);
 
         PseudoDataBase.addUser(newUser);
     }

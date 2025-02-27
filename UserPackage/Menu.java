@@ -2,6 +2,7 @@ package UserPackage;
 
 public class Menu {
     public void enteringTheSystem() {
+        
         printing("-----------------");
         printing("1. Login"); 
         printing("2. Registrar");
@@ -37,7 +38,20 @@ public class Menu {
         printing("-----------------");
         printing("\n");
     }
+
+    public void indexMenu() {
+        printing("-----------------");
+        printing("1. Entrar na trilha"); 
+        printing("2. Ver sua ");
+        printing("-----------------");
+    }
+
+
+
     private void printing(String string) {
         System.out.println(string);
+    }
+    public void clearingConsole() {
+        System.out.print("\033[H\033[2J");
     }
 }
