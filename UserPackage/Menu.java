@@ -41,8 +41,10 @@ public class Menu {
 
     public void indexMenu() {
         printing("-----------------");
-        printing("1. Entrar na trilha"); 
-        printing("2. Ver sua ");
+        printing("1. Enter your Path!");
+        printing("2. See your progress.");
+        printing("3. Options.");
+        printing("5. Log out.");
         printing("-----------------");
     }
 

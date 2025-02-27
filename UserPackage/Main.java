@@ -8,6 +8,7 @@ public class Main {
 
         UserInputManager userInput = new UserInputManager();
         userInput.startingLoginInput();
-
+        Index index = new Index();
+        index.index();
     }
 }

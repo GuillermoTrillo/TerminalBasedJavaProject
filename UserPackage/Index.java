@@ -1,7 +1,13 @@
 package UserPackage;
 
 public class Index {
-    public void index() {
-        
+    private Menu menu;
+    Index() {
+        menu = new Menu();
     }
+
+    public void index() {
+        menu.indexMenu();
+    }
+
 }
