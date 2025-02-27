@@ -24,6 +24,10 @@ public class Menu {
         printing("\n");
     }
 
+    public void askingForName() {
+        printing("-----------------");
+        printing("Name:");
+    }
     private void printing(String string) {
         System.out.println(string);
     }
