@@ -30,13 +30,13 @@ public class UserInputManager {
         }
     }
 
+    //*Funções do login
     private void loginEmailInput() {
         String userEmail = emailInput();
 
-        if(userEmail.compareTo("0") == 0) {
-            startingLoginInput();
+        if(returningToLoginPage(userEmail))
             return;
-        }
+
         User userFound = userService.emailVerification(userEmail);
         if(userFound == null) {
             menu.somethingWentWrong();
@@ -49,14 +49,12 @@ public class UserInputManager {
     private void loginPasswordInput(User userFound) {
         String userPassword = passwordInput();
 
-        if(userPassword.compareTo("0") == 0) {
-            startingLoginInput();
-            scanner.close();
+        if(returningToLoginPage(userPassword))
             return;
-        }
         
         if(userService.passwordVerification(userFound, userPassword)) {
             //todo guardar os dados na sessão e entrar no sistema 
+            
         }
         else {
             menu.somethingWentWrong();
@@ -65,17 +63,67 @@ public class UserInputManager {
         scanner.close();
     }
 
-
+    //* Funções de registro
     private void registerEmailInput() {
-        String userEmail = emailInput();
+        String newUserEmail = emailInput();
+        User newUser = new User(userChoice, null, null, null);
+        if(returningToLoginPage(newUserEmail))
+            return;
 
-        if(userEmail.compareTo("0") == 0) {
-            startingLoginInput();
+        User userFound = userService.emailVerification(newUserEmail);
+        if(userFound != null) {
+            menu.userAlreadyExists();
+            registerEmailInput();
+            scanner.close();
             return;
         }
+
+        boolean IsEmailCorrect = userService.confirmEmailIsCorrect(newUserEmail);
+        if(!IsEmailCorrect) {
+            menu.somethingWentWrong();
+            registerEmailInput();
+            scanner.close();
+            return;
+        }
+
+        registerNameInput(newUser);
+    }
+    private void registerNameInput(User newUser) {
+        String newUserName = NameInput();
+        if(returningToLoginPage(newUserName))
+            return;
+
+        newUser.setNameUser(newUserName);
+        registerPasswordInput(newUser);
+    }
+    private void registerPasswordInput(User newUser) {
+        menu.passwordNeeds();
+        String newPassword = passwordInput();
+        
+        boolean IsPasswordCorrect = userService.confirmPasswordIsCorrect(newPassword);
+        if(!IsPasswordCorrect) {
+            menu.somethingWentWrong();
+            registerPasswordInput(newUser);
+            scanner.close();
+            return;
+        }
+
+        newUser.setPasswordUser(newPassword);
+
+        userService.completeUserRegistration(newUser);
+        startingLoginInput();
     }
 
 
+    //* funçoes de suporte. Pequenas e reutilizaveis.
+    private boolean returningToLoginPage(String newInput) {
+        if(newInput.compareTo("0") == 0) {
+            startingLoginInput();
+            scanner.close();
+            return true;
+        }
+        return false;
+    }
     private String NameInput() {
         menu.askingForName();
         return scanner.nextLine();

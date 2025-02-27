@@ -23,10 +23,19 @@ public class Menu {
         printing("-----------------");
         printing("\n");
     }
-
+    public void passwordNeeds() {
+        printing("-----------------");
+        printing("Password needs at least 8 characters.");
+    }
     public void askingForName() {
         printing("-----------------");
         printing("Name:");
+    }
+    public void userAlreadyExists() {
+        printing("-----------------");
+        printing("User already exists.");
+        printing("-----------------");
+        printing("\n");
     }
     private void printing(String string) {
         System.out.println(string);

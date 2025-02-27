@@ -2,14 +2,14 @@ package UserPackage;
 
 public class User {
     private int idUser;
-    private String nomeUser;
+    private String nameUser;
     private String passwordUser;
     private String emailUser;
     private boolean isAdministrator;
     
-    protected User(int id, String nome, String password, String email) {
+    protected User(int id, String name, String password, String email) {
         this.idUser = id;
-        this.nomeUser = nome;
+        this.nameUser = name;
         this.passwordUser = password;
         this.emailUser = email;
     }
@@ -22,12 +22,12 @@ public class User {
         this.idUser = idUser;
     }
 
-    public String getNomeUser() {
-        return this.nomeUser;
+    public String getNameUser() {
+        return this.nameUser;
     }
 
-    public void setNomeUser(String nomeUser) {
-        this.nomeUser = nomeUser;
+    public void setNameUser(String nameUser) {
+        this.nameUser = nameUser;
     }
 
     public String getPasswordUser() {

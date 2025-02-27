@@ -1,6 +1,7 @@
 package UserPackage;
 
 public class UserService {
+
     public User emailVerification(String email) {
         User doesUserExist = PseudoDataBase.doesUserExist(email);
         if(doesUserExist == null && email.contains("@") == false)
@@ -14,5 +15,25 @@ public class UserService {
             return true;
 
         return false;
+    }
+
+    public boolean confirmEmailIsCorrect(String newEmail) {
+        if(newEmail.contains("@"))
+            return true;
+        else
+            return false;
+    }
+    public boolean confirmPasswordIsCorrect(String newPassword) {
+        if(newPassword.length() >= 8)
+            return true;
+        else
+            return false;
+    }
+
+    public void completeUserRegistration(User newUser) {
+
+        newUser.setIdUser(PseudoDataBase.getLastId());
+
+        PseudoDataBase.addUser(newUser);
     }
 }
