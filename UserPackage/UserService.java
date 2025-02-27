@@ -1,4 +1,4 @@
-package pacagepontocom;
+package UserPackage;
 
 public class UserService {
     public User emailVerification(String email) {

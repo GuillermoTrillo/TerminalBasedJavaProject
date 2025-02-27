@@ -1,4 +1,4 @@
-package pacagepontocom;
+package UserPackage;
 
 public class Menu {
     public void enteringTheSystem() {

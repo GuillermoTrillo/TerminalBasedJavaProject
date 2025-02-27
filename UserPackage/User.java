@@ -1,4 +1,4 @@
-package pacagepontocom;
+package UserPackage;
 
 public class User {
     private int idUser;
