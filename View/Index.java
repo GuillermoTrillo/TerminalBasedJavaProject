@@ -1,9 +1,9 @@
 package View;
 
 public class Index {
-    private Menu menu;
+    private UserMenu menu;
     public Index() {
-        menu = new Menu();
+        menu = new UserMenu();
     }
 
     public void index() {

@@ -4,17 +4,17 @@ import java.util.Scanner;
 
 import Model.User;
 import Service.UserService;
-import View.Menu;
+import View.UserMenu;
 
 public class UserController {
     private int userChoice;
     private Scanner scanner;
-    private Menu menu;
+    private UserMenu menu;
     private UserService userService;
 
     public UserController() {
         scanner = new Scanner(System.in);
-        menu = new Menu();
+        menu = new UserMenu();
         userService = new UserService();
     }
   
@@ -43,7 +43,7 @@ public class UserController {
 
         User userFound = userService.emailVerification(userEmail);
         if(userFound == null) {
-            menu.somethingWentWrong();
+            menu.genericErrorMessage();
             loginEmailInput();
             scanner.close();
             return;
@@ -61,7 +61,7 @@ public class UserController {
             menu.clearingConsole();
         }
         else {
-            menu.somethingWentWrong();
+            menu.genericErrorMessage();
             loginPasswordInput(userFound);
         }
         scanner.close();
@@ -83,7 +83,7 @@ public class UserController {
 
         boolean IsEmailCorrect = userService.confirmEmailIsCorrect(newUserEmail);
         if(!IsEmailCorrect) {
-            menu.somethingWentWrong();
+            menu.genericErrorMessage();
             registerEmailInput();
             scanner.close();
             return;
@@ -105,7 +105,7 @@ public class UserController {
         
         boolean IsPasswordCorrect = userService.confirmPasswordIsCorrect(newPassword);
         if(!IsPasswordCorrect) {
-            menu.somethingWentWrong();
+            menu.genericErrorMessage();
             registerPasswordInput(newUser);
             scanner.close();
             return;
@@ -143,7 +143,7 @@ public class UserController {
         try {
             this.userChoice = Integer.parseInt(scanner.nextLine());
         } catch (Exception e) {
-            menu.somethingWentWrong();
+            menu.genericErrorMessage();
             startingLoginInput();
         }
     }
