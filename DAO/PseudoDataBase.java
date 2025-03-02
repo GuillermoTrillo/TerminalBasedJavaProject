@@ -1,6 +1,8 @@
-package UserPackage;
+package DAO;
 
 import java.util.HashMap;
+
+import Model.User;
 
 public class PseudoDataBase {
     public static HashMap<Integer, User> users = new HashMap<Integer, User>();

@@ -1,8 +1,8 @@
-package UserPackage;
+package View;
 
 public class Index {
     private Menu menu;
-    Index() {
+    public Index() {
         menu = new Menu();
     }
 

@@ -1,4 +1,4 @@
-package UserPackage;
+package Model;
 
 public class User {
     private int idUser;
@@ -7,7 +7,7 @@ public class User {
     private String emailUser;
     private boolean isAdministrator;
     
-    protected User(int id, String name, String password, String email) {
+    public User(int id, String name, String password, String email) {
         this.idUser = id;
         this.nameUser = name;
         this.passwordUser = password;

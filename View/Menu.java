@@ -1,4 +1,4 @@
-package UserPackage;
+package View;
 
 public class Menu {
     public void enteringTheSystem() {

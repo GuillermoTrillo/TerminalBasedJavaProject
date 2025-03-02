@@ -1,4 +1,6 @@
-package UserPackage;
+package Controller;
+
+import Model.User;
 
 public class Session {
     private static User userInSession;

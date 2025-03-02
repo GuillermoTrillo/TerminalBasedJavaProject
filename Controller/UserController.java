@@ -1,14 +1,18 @@
-package UserPackage;
+package Controller;
 
 import java.util.Scanner;
 
-public class UserInputManager {
+import Model.User;
+import Service.UserService;
+import View.Menu;
+
+public class UserController {
     private int userChoice;
     private Scanner scanner;
     private Menu menu;
     private UserService userService;
 
-    public UserInputManager() {
+    public UserController() {
         scanner = new Scanner(System.in);
         menu = new Menu();
         userService = new UserService();

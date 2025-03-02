@@ -1,4 +1,7 @@
-package UserPackage;
+package Service;
+
+import DAO.PseudoDataBase;
+import Model.User;
 
 public class UserService {
 

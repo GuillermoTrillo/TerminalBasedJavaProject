@@ -1,4 +1,8 @@
-package UserPackage;
+package Controller;
+
+import DAO.PseudoDataBase;
+import Model.User;
+import View.Index;
 
 public class Main {
     public static void main(String[] args) {
@@ -6,7 +10,7 @@ public class Main {
         administrator.setIsAdministrator(true);
         PseudoDataBase.addUser(administrator);
 
-        UserInputManager userInput = new UserInputManager();
+        UserController userInput = new UserController();
         userInput.startingLoginInput();
         Index index = new Index();
         index.index();
