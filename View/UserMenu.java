@@ -24,15 +24,11 @@ public class UserMenu extends Menu{
         printing("-----------------");
         printing("Name:");
     }
-    public void userAlreadyExists() {
+    
+    public void AlreadyExists() {
         printing("-----------------");
         printing("User already exists.");
         printing("-----------------");
         printing("\n");
-    }
-
-    public void genericErrorMessage() {
-        printing("-----------------");
-        printing("User already exists.");
     }
 }

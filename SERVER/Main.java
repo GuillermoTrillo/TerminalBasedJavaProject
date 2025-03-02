@@ -1,5 +1,6 @@
-package Controller;
+package SERVER;
 
+import Controller.LoginController;
 import DAO.PseudoDataBase;
 import Model.User;
 import View.Index;
@@ -10,8 +11,8 @@ public class Main {
         administrator.setIsAdministrator(true);
         PseudoDataBase.addUser(administrator);
 
-        UserController userInput = new UserController();
-        userInput.startingLoginInput();
+        LoginController loginController = new LoginController();
+        loginController.startingLoginInput();
         Index index = new Index();
         index.index();
     }

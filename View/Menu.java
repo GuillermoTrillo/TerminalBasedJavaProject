@@ -1,13 +1,16 @@
 package View;
 
-public abstract class Menu {     
-    
+public class Menu {     
+
+
     public void printing(String string) {
         System.out.println(string);
     }
+
     public void clearingConsole() {
         System.out.print("\033[H\033[2J");
-    }
+    }  
+
     public void genericErrorMessage() {
         printing("\n");
         printing("-----------------");
@@ -15,6 +18,7 @@ public abstract class Menu {
         printing("-----------------");
         printing("\n");
     }
+
     public void indexMenu() {
         printing("-----------------");
         printing("1. Enter your Path!");
@@ -23,4 +27,8 @@ public abstract class Menu {
         printing("5. Log out.");
         printing("-----------------");
     }   
+
+    public void AlreadyExists() {
+        
+    }
 }
