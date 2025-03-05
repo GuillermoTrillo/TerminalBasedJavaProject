@@ -103,8 +103,10 @@ public class LoginController extends UserController {
         startingLoginInput();
     }
 
+    
     private boolean returningToLoginPage(String newInput) {
         if(newInput.compareTo("0") == 0) {
+            menu.clearingConsole();
             startingLoginInput();
             scanner.close();
             return true;
