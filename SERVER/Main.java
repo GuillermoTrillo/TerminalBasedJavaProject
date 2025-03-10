@@ -1,9 +1,9 @@
 package SERVER;
 
 import Controller.LoginController;
+import Controller.EntryController;
 import DAO.PseudoDataBase;
 import Model.User;
-import View.Index;
 
 public class Main {
     public static void main(String[] args) {
@@ -12,8 +12,13 @@ public class Main {
         PseudoDataBase.addUser(administrator);
 
         LoginController loginController = new LoginController();
-        loginController.startingLoginInput();
-        Index index = new Index();
-        index.index();
+        loginController.startingLoginInput();   
+
+        EntryController entryController = new EntryController();
+
+        if(Session.getUserInSession().getIsAdministrator())
+            entryController.mainMenuAdmin();
+        else 
+            entryController.mainMenu();
     }
 }

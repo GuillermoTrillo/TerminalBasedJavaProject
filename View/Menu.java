@@ -26,7 +26,17 @@ public class Menu {
         printing("3. Options.");
         printing("5. Log out.");
         printing("-----------------");
-    }   
+    }
+
+    public void indexMenuAdmin() {
+        printing("-----------------");
+        printing("1. Check the paths.");
+        printing("2. Check other players.");
+        printing("3. Options.");
+        printing("5. Log out.");
+        printing("-----------------");
+    }
+
 
     public void AlreadyExists() {
         
