@@ -31,7 +31,6 @@ public class LoginController extends UserController {
         if(userFound == null) {
             menu.genericErrorMessage();
             loginEmailInput();
-            scanner.close();
             return;
         }
         loginPasswordInput(userFound);
@@ -50,7 +49,7 @@ public class LoginController extends UserController {
             menu.genericErrorMessage();
             loginPasswordInput(userFound);
         }
-        scanner.close();
+        
     }
 
     //* Funções de registro
@@ -63,7 +62,7 @@ public class LoginController extends UserController {
         if(userFound != null) {
             menu.AlreadyExists();
             registerEmailInput();
-            scanner.close();
+            
             return;
         }
 
@@ -71,7 +70,7 @@ public class LoginController extends UserController {
         if(!IsEmailCorrect) {
             menu.genericErrorMessage();
             registerEmailInput();
-            scanner.close();
+            
             return;
         }
         User newUser = new User(0, "", "null", newUserEmail);
@@ -93,7 +92,7 @@ public class LoginController extends UserController {
         if(!IsPasswordCorrect) {
             menu.genericErrorMessage();
             registerPasswordInput(newUser);
-            scanner.close();
+            
             return;
         }
 
@@ -108,7 +107,7 @@ public class LoginController extends UserController {
         if(newInput.compareTo("0") == 0) {
             menu.clearingConsole();
             startingLoginInput();
-            scanner.close();
+            
             return true;
         }
         return false;
