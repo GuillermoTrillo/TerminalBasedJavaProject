@@ -17,6 +17,10 @@ public class UserController {
         userService = new UserService();
     }
 
+    public void profile() {
+        
+    }
+
     //* funçoes de suporte. Pequenas e reutilizaveis.
     protected String NameInput() {
         menu.askingForName();

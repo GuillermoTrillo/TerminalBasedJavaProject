@@ -9,10 +9,13 @@ public class EntryController implements Controller{
     private Menu menu;
     protected Scanner scanner;
     private int entryChoice;
-    
+    private LoginController loginController;
+    private UserController userController;
 
     public EntryController() {
         scanner = new Scanner(System.in, StandardCharsets.UTF_8);
+        userController = new UserController();
+        loginController = new LoginController();
         this.menu = new Menu();
     }
 
@@ -31,6 +34,7 @@ public class EntryController implements Controller{
 
             case 2:
                 //todo see your progress
+                userController.profile();
                 break;
 
             case 3:
@@ -42,14 +46,17 @@ public class EntryController implements Controller{
                 break;
 
             case 0:
-                //todo turn the system off
+                turnTheSystemOff();
                 break;
             default:
                 break;
         }
     }
+    
 
-
+    private void turnTheSystemOff() {
+        menu.specificErrorMessage("Turning off the system. Goodbye, chief.");
+    }
 
     @Override
     public void setNumericChoice() {

@@ -40,7 +40,13 @@ public class Menu {
     }
 
 
-    public void AlreadyExists() {
-        
+    public void specificErrorMessage(String errorMessage) {    
+        System.out.println("\n");
+        System.out.println("-----------------");
+
+        printing(errorMessage);
+
+        System.out.println("-----------------");
+        System.out.println("\n");
     }
 }
