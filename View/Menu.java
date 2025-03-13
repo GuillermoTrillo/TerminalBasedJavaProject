@@ -24,7 +24,8 @@ public class Menu {
         printing("1. Enter your Path!");
         printing("2. See your progress.");
         printing("3. Options.");
-        printing("5. Log out.");
+        printing("4. Log out.");
+        printing("0. Turn the system off.");
         printing("-----------------");
     }
 
@@ -34,6 +35,7 @@ public class Menu {
         printing("2. Check other players.");
         printing("3. Options.");
         printing("5. Log out.");
+        printing("0. Turn the system off.");
         printing("-----------------");
     }
 

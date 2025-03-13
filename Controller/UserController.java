@@ -1,4 +1,5 @@
 package Controller;
+import java.nio.charset.StandardCharsets;
 import java.util.Scanner;
 
 import Service.UserService;
@@ -11,7 +12,7 @@ public class UserController {
     protected UserService userService;
 
     public UserController() {
-        scanner = new Scanner(System.in);
+        scanner = new Scanner(System.in, StandardCharsets.UTF_8);
         menu = new UserMenu();
         userService = new UserService();
     }
