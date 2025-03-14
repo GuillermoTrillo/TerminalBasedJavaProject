@@ -65,7 +65,6 @@ public class EntryController implements Controller{
             
             this.entryChoice = Integer.parseInt(scanner.nextLine());
         } catch (Exception e) {
-            System.err.println(e);
             menu.genericErrorMessage();
 
         }

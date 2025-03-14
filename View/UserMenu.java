@@ -1,5 +1,7 @@
 package View;
 
+import SERVER.Session;
+
 public class UserMenu extends Menu{
     public void enteringTheSystem() {
         printing("-----------------");
@@ -30,5 +32,20 @@ public class UserMenu extends Menu{
         printing("User already exists.");
         printing("-----------------");
         printing("\n");
+    }
+
+    public void showCurrentUser() {
+        printing("-----------------");
+        printing("Nome: "+ Session.getUserInSession().getNameUser());
+        printing("--------");
+        printing("Email: "+ Session.getUserInSession().getEmailUser());
+        printing("--------");
+        printing("Password: *****");
+        printing("-----------------");
+    }
+    public void profileMenu() {
+        printing("-----------------");
+        printing("1. Edit user");
+        printing("0. Go back");
     }
 }
