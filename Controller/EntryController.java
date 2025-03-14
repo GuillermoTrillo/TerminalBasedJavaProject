@@ -60,9 +60,7 @@ public class EntryController implements Controller{
 
     @Override
     public void setNumericChoice() {
-        try {
-            System.err.println(scanner.hasNextLine());
-            
+        try {            
             this.entryChoice = Integer.parseInt(scanner.nextLine());
         } catch (Exception e) {
             menu.genericErrorMessage();

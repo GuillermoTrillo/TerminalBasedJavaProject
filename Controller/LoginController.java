@@ -112,14 +112,7 @@ public class LoginController extends UserController {
         }
         return false;
     }
-    
-    protected void setNumericChoice() {
-        try {
-            this.userChoice = Integer.parseInt(scanner.nextLine());
-        } catch (Exception e) {
-            menu.genericErrorMessage();
-        }
-    }
+
     
 }
 
