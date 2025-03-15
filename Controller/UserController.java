@@ -10,12 +10,14 @@ public class UserController implements Controller{
     protected Scanner scanner;
     protected UserMenu menu;
     protected UserService userService;
+    private EntryController entryController;
 
     public UserController() {
         scanner = new Scanner(System.in, StandardCharsets.UTF_8);
         menu = new UserMenu();
         userService = new UserService();
     }
+
 
     public void profile() {
         menu.clearingConsole();
@@ -28,7 +30,9 @@ public class UserController implements Controller{
                 editUser();
                 break;
             case 0:
+            entryController = new EntryController();
             //todo find a way to go back into Entry Controller
+            entryController.mainMenu();
             break;
             default:
                 profile();
