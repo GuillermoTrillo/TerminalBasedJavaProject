@@ -9,6 +9,10 @@ public class UserMenu extends Menu{
         printing("2. Registrar");
         printing("-----------------");
     }
+    public void warningPasswordNeeded() {
+        printing("-----------------");
+        printing("To continue, write your password. Else, 0 to turn back.");
+    }
     public void askingForEmail() {
         printing("-----------------");
         printing("Write your email. To turn back, write 0.");

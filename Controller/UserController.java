@@ -31,7 +31,6 @@ public class UserController implements Controller{
                 break;
             case 0:
             entryController = new EntryController();
-            //todo find a way to go back into Entry Controller
             entryController.mainMenu();
             break;
             default:
@@ -42,6 +41,7 @@ public class UserController implements Controller{
 
     private void editUser() {
         //todo
+        menu.warningPasswordNeeded();
     }
     //* funçoes de suporte. Pequenas e reutilizaveis.
     @Override
