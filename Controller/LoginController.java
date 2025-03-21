@@ -113,6 +113,10 @@ public class LoginController extends UserController {
         return false;
     }
 
-    
+
+    public void logOut() {
+        Session.logOut();
+        startingLoginInput();
+    }
 }
 

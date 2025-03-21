@@ -21,4 +21,9 @@ public class Session {
     public static String getSessionVariableByKey(String key) {
         return sessionVariables.get(key);
     }
+
+    public static void logOut() {
+        userInSession = null;
+        sessionVariables.clear();
+    }
 }

@@ -9,12 +9,12 @@ public class EntryController implements Controller{
     private Menu menu;
     protected Scanner scanner;
     private int entryChoice;
-    //todo private LoginController loginController;
+    private LoginController loginController;
     private UserController userController;
 
     public EntryController() {
         scanner = new Scanner(System.in, StandardCharsets.UTF_8);
-        //todo loginController = new LoginController();
+        loginController = new LoginController();
         this.menu = new Menu();
     }
 
@@ -32,7 +32,6 @@ public class EntryController implements Controller{
                 break;
 
             case 2:
-                //todo see your progress
                 userController = new UserController();
                 userController.profile();
                 break;
@@ -43,6 +42,7 @@ public class EntryController implements Controller{
 
             case 4:
                 //todo log out
+                loginController.logOut();
                 break;
 
             case 0:
