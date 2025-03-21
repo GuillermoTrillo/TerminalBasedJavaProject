@@ -51,5 +51,15 @@ public class UserMenu extends Menu{
         printing("-----------------");
         printing("1. Edit user");
         printing("0. Go back");
+        printing("-----------------");
+    }
+
+    public void editMenu() {
+        printing("-----------------");
+        printing("1. Edit email");
+        printing("2. Edit password");
+        printing("3. Edit username");
+        printing("0. Go back");
+        printing("-----------------");
     }
 }

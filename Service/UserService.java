@@ -2,6 +2,7 @@ package Service;
 
 import DAO.PseudoDataBase;
 import Model.User;
+import SERVER.Session;
 
 public class UserService {
 
@@ -38,5 +39,22 @@ public class UserService {
         newUser.setIdUser(PseudoDataBase.getLastId()+1);
 
         PseudoDataBase.addUser(newUser);
+    }
+
+
+    public void editEmail(String newEmail) {
+        User newUser = Session.getUserInSession();
+        newUser.setEmailUser(newEmail);
+        PseudoDataBase.editUser(newUser);
+    }
+    public void editPassword(String newPassword) {
+        User newUser = Session.getUserInSession();
+        newUser.setPasswordUser(newPassword);
+        PseudoDataBase.editUser(newUser);
+    }
+    public void editName(String newName) {
+        User newUser = Session.getUserInSession();
+        newUser.setNameUser(newName);
+        PseudoDataBase.editUser(newUser);
     }
 }
